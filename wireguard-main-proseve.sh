@@ -10,9 +10,7 @@ function isRoot() {
 }
 
 function DesignsSHELL(){
-if ! type "lolcat" > /dev/null; then
-  # Nothing to do... so Continue to Install
-else
+if ! command -v lolcat &> /dev/null; then
         apt-get install ruby
         wget https://github.com/busyloop/lolcat/archive/master.zip
         unzip master.zip
@@ -20,7 +18,10 @@ else
         gem install lolcat
         cd
         apt-get install figlet
-fi
+else
+        echo "No more Install" | lolcat -a -d 5
+        echo "Already Exist" | lolcat -a -d 5
+    fi
 }
 
 function checkVirt() {
