@@ -12,7 +12,7 @@ function isRoot() {
 function DesignsSHELL(){
 if ! type "lolcat" > /dev/null; then
   # Nothing to do... so Continue to Install
-  else
+else
         apt-get install ruby
         wget https://github.com/busyloop/lolcat/archive/master.zip
         unzip master.zip
